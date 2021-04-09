@@ -5,21 +5,16 @@
 " Actually unnecessary when a .vimrc is even PRESENT per ':h nocompatible', but here as a reminder
 set nocompatible
 
-" Show line numbers
-set number
-
 " Allow mouse selection and positioning!
 set mouse&
 set mouse=a
 
 " Modify indent behavior
-set expandtab
+set expandtab                          " Expand an entered Tab to spaces
 set autoindent                         " Copy indent from current line when starting a new line
 set smarttab
-set tabstop=4
-
-" Set terminal title to the file being edited
-set title
+set tabstop=2                          " Indent is 2 spaces
+set smartindent                        " C-style indenting, but looser - for example, indent after {
 
 " Improve search
 set hlsearch                           " Highlight search results
@@ -31,3 +26,9 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 set laststatus=2
+
+" Miscellaneous
+filetype plugin on                     " Auto-detect un-labeled filetypes
+set title                              " Set terminal title to the file being edited
+set number                             " Show line numbers
+set belloff=all                        " Disable the error bell!
