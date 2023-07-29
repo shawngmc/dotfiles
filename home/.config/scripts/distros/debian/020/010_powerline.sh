@@ -14,6 +14,6 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/share/powerline/bindings/bash/powerline.sh
 EOF1
-if ! grep -F -q -f $HOME/.bashrc{.append,}; then
+if ! grep -F -q -f $HOME/.bashrc $HOME/.bashrc.append; then
     cat $HOME/.bashrc.append >> $HOME/.bashrc
 fi
