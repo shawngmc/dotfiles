@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Installing powerline..."
-sudo apt install powerline
+echo "Installing powerline and vim-nox (for python3)..."
+sudo apt install powerline vim-nox -y
 
 echo "Configuring .bashrc..."
 cat >> $HOME/.bashrc <<'EOF'
