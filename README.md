@@ -1,5 +1,5 @@
 # dotfiles
-Shawn McNaughton's dotfiles in a homesick-compatible package
+Shawn McNaughton's dotfiles and system setup scripts in a homesick-compatible package
 
 
 # Usage
@@ -11,6 +11,6 @@ sudo apt install homesick -y
 
 ## Activate
 ```
-homesick clone shawngmc/dotfiles
-homesick link doctfiles
+homesick clone git@github.com:shawngmc/dotfiles
+homesick link dotfiles
 ```
