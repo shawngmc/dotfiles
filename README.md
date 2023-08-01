@@ -35,6 +35,7 @@ homesick link dotfiles
 ## Apps
 ### Installed
 - Glances - TUI-based system monitor
+- Goaccess - Real-time web log analyzer and interactive viewer
 - Gnome-Terminal - Solid terminal, works outside of Gnome WM
 - mc - TUI-base file manager
 - neofetch - shell system summary
