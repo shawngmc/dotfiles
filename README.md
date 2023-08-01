@@ -33,7 +33,6 @@ homesick link dotfiles
 - Enable 
 
 ## Installed Apps
-- Alacritty - Clean, simple terminal emulator
 - Powerline - Better dynamic terminal prompt
 - Tabbed - make any embeddable X app a tabbed app
 - VIM-Nox - VIM with python preloaded
