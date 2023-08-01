@@ -25,3 +25,9 @@ fi
 if [ -f "~/.bashrc.local" ]; then
   . ~/.bashrc.local
 fi
+
+# Run neofetch if present
+builtin type -P neofetch
+if [ $? -eq 0 ]; then
+  neofetch
+fi
