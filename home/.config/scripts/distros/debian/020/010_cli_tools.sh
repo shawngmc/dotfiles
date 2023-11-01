@@ -1,20 +1,40 @@
 #!/bin/bash
 
-echo "Installing:"
-echo "- glances: TUI system monitor"
-echo "- goaccess: Real-time web log analyzer and interactive viewer"
-echo "- mc: TUI file manager"
-echo "- neofetch*: Shell system summary"
-echo "- powerline*: Shell Prompt Improvements"
-echo "- neovim: vim modernized"
-echo "- python3-pynvim: python3 support for neovim
-sudo apt install -y \
-  glances \
-  goaccess \
-  mc \
-  neofetch \
-  powerline \
-  neovim \
-  python3-pynvim
+
+
+PACKAGES=()
+
+# Neofetch - system info at-a-glance in CLI for .bashrc
+PACKAGES+=("neofetch")
+
+# wl-clipboard - CLI Clipboard tools for wayland
+PACKAGES+=("wl-clipboard")
+
+# Glances - top alternative
+PACKAGES+=("glances")
+
+# Powerline - nice automatic prompt visual
+PACKAGES+=("powerline")
+
+# Neovim - better rebuild of vim
+PACKAGES+=("neovim")
+
+# Python3-neovim - Python3 support for Vim
+PACKAGES+=("python3-pynvim")
+
+# Hyperfine - benchmark a CLI command
+PACKAGES+=("hyperfine")
+
+# httpie - HTTP 'for humans' CLI
+PACKAGES+=("httpie")
+
+# goaccess - Live web log analysis tool
+PACKAGES+=("goaccess")
+
+# mc - TUI file manager
+PACKAGES+=("mc")
+
+sudo apt install -y ${PACKAGES[@]}
+ 
 
 echo "*: Custom .bashrc should pick up and run this now."
