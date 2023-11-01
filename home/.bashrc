@@ -39,23 +39,29 @@ fi
 # If installed, run powerline
 if [ -f "/usr/share/powerline/bindings/bash/powerline.sh" ]; then
   POWERLINE_PATH="/usr/share/powerline/bindings/bash/powerline.sh"
-elif [ -f $(which powerline) ]; then
-  POWERLINE_PATH=$(which powerline)
+elif [ -f "/usr/share/powerline/bash/powerline.sh" ]; then
+  POWERLINE_PATH="/usr/share/powerline/bash/powerline.sh"
 fi
 if [ ! -z "$POWERLINE_PATH" ]; then
-  STATUS="$(systemctl is-active powerline-daemon.service --user)"
-  if [ "${STATUS}" != "active" ]; then
+  # See if powerline daemon is a systemd service
+  systemctl list-unit-files foo.service &>/dev/null
+  if [ $? -eq 0 ]; then
+    STATUS="$(systemctl is-active powerline-daemon.service --user)"
+    if [ "${STATUS}" != "active" ]; then
       systemctl start powerline-daemon.service --user
+    fi
+  elif [ -f $(which powerline-daemon) ]; then
+    powerline-daemon -q &
   fi
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bindings/bash/powerline.sh
+  . $POWERLINE_PATH
 fi
 
 # Run neofetch if present
-builtin type -P neofetch
+NEOFETCH_PATH=$(which neofetch)
 if [ $? -eq 0 ]; then
-  neofetch
+  $NEOFETCH_PATH
 fi
 
 # bun
