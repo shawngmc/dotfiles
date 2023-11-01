@@ -6,13 +6,15 @@ echo "- goaccess: Real-time web log analyzer and interactive viewer"
 echo "- mc: TUI file manager"
 echo "- neofetch*: Shell system summary"
 echo "- powerline*: Shell Prompt Improvements"
-echo "- vim-nox: vim with Python3 bindings"
+echo "- neovim: vim modernized"
+echo "- python3-pynvim: python3 support for neovim
 sudo apt install -y \
   glances \
   goaccess \
   mc \
   neofetch \
   powerline \
-  vim-nox \
+  neovim \
+  python3-pynvim
 
 echo "*: Custom .bashrc should pick up and run this now."
