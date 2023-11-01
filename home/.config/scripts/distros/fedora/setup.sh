@@ -11,4 +11,7 @@ PACKAGES+=("wl-clipboard")
 # Glances - top alternative
 PACKAGES+=("glances")
 
+# Powerline - nice automatic prompt visual
+PACKAGES+=("powerline")
+
 sudo yum install -y ${PACKAGES[@]}
