@@ -20,6 +20,12 @@ PACKAGES+=("neovim")
 # Python3-neovim - Python3 support for Vim
 PACKAGES+=("python3-neovim")
 
+# Hyperfine - benchmark a CLI command
+PACKAGES+=("hyperfine")
+
+# httpie - HTTP 'for humans' CLI
+PACKAGES+=("httpie")
+
 sudo yum install -y ${PACKAGES[@]}
 
 
