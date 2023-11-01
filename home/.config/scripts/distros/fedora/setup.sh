@@ -21,3 +21,7 @@ PACKAGES+=("neovim")
 PACKAGES+=("python3-neovim")
 
 sudo yum install -y ${PACKAGES[@]}
+
+
+# Symlink editor
+sudo alternatives --install /usr/bin/editor nvim /bin/nvim 1
