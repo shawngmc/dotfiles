@@ -26,6 +26,21 @@ PACKAGES+=("hyperfine")
 # httpie - HTTP 'for humans' CLI
 PACKAGES+=("httpie")
 
+# Diffing hexeditor
+PACKAGES+=("dhex")
+
+# CLI Spreadsheet
+PACKAGES+=("sc-im")
+
+# Testssl.sh
+PACKAGES+=("testssl")
+
+# HTTP server load tester
+PACKAGES+=("siege")
+
+# PDF Toolkit
+PACKAGES+=("pdftk")
+
 sudo yum install -y ${PACKAGES[@]}
 
 

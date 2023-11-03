@@ -34,7 +34,22 @@ PACKAGES+=("goaccess")
 # mc - TUI file manager
 PACKAGES+=("mc")
 
+# Diffing hexeditor
+PACKAGES+=("dhex")
+
+# CLI Spreadsheet
+PACKAGES+=("sc-im")
+
+# Testssl.sh
+PACKAGES+=("testssl.sh")
+
+# HTTP server load tester
+PACKAGES+=("siege")
+
+# PDF Toolkit
+PACKAGES+=("pdftk")
+
 sudo apt install -y ${PACKAGES[@]}
- 
+
 
 echo "*: Custom .bashrc should pick up and run this now."
