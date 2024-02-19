@@ -1,11 +1,5 @@
 #!/bin/bash
-
-
-
 PACKAGES=()
-
-# Neofetch - system info at-a-glance in CLI for .bashrc
-PACKAGES+=("neofetch")
 
 # wl-clipboard - CLI Clipboard tools for wayland
 PACKAGES+=("wl-clipboard")
@@ -16,9 +10,6 @@ PACKAGES+=("glances")
 # Hyperfine - benchmark a CLI command
 PACKAGES+=("hyperfine")
 
-# httpie - HTTP 'for humans' CLI
-PACKAGES+=("httpie")
-
 # goaccess - Live web log analysis tool
 PACKAGES+=("goaccess")
 
@@ -27,9 +18,6 @@ PACKAGES+=("mc")
 
 # Diffing hexeditor
 PACKAGES+=("dhex")
-
-# Testssl.sh
-PACKAGES+=("testssl.sh")
 
 # HTTP server load tester
 PACKAGES+=("siege")

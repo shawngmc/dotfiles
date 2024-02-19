@@ -15,4 +15,3 @@ curl -LJO $JQ_LATEST_URL
 chmod +x ./jq-linux-amd64
 mkdir -pv ~/.local/bin
 mv jq-linux-amd64 ~/.local/bin/jq
-
