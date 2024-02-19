@@ -14,7 +14,7 @@ PACKAGES+=("wl-clipboard")
 PACKAGES+=("glances")
 
 # Powerline - nice automatic prompt visual
-PACKAGES+=("powerline")
+PACKAGES+=("python3-powerline")
 
 # Neovim - better rebuild of vim
 PACKAGES+=("neovim")
