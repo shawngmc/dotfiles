@@ -9,9 +9,7 @@ NEOVIM_TAG=$(cat ./neovim_latest.json | grep tag-name)
 NEOVIM_TAG=${NEOVIM_TAG:15:-2}
 echo "Pulling Neovim tag: ${NEOVIM_TAG}"
 
-NEOVIM_LATEST_URL=$(cat ./neovim_latest.json | grep browser_download_url | grep nvim-linux64.tar.gz)
-echo $NEOVIM_LATEST_URL
-exit
+NEOVIM_LATEST_URL=$(cat ./neovim_latest.json | jq -r '.assets[] | select(.name == "nvim-linux64.tar.gz") | .browser_download_url')
 NEOVIM_LATEST_URL=${NEOVIM_LATEST_URL:31:-1}
 rm ./neovim_latest.json
 echo $NEOVIM_LATEST_URL
