@@ -3,7 +3,7 @@
 # Can't use JQ to get the JQ version :)
 # Have to save pull from GH to protect newlines
 curl -s "https://api.github.com/repos/jqlang/jq/releases/latest" -o ./jq_latest.json 
-JQ_TAG=$(cat ./jq_latest.json | grep tag-name)
+JQ_TAG=$(cat ./jq_latest.json | grep tag_name)
 JQ_TAG=${JQ_TAG:15:-2}
 echo "Pulling JQ tag: ${JQ_TAG}"
 
