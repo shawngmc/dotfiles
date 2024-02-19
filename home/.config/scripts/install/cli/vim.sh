@@ -4,12 +4,14 @@ source /etc/os-release
 PACKAGES=()
 
 # Have to save pull from GH to protect newlines
-curl -s "https://api.github.com/repos/neovim/neovim/releases/latest" -o ./jq_latest.json 
+curl -s "https://api.github.com/repos/neovim/neovim/releases/latest" -o ./neovim_latest.json 
 NEOVIM_TAG=$(cat ./neovim_latest.json | grep tag-name)
 NEOVIM_TAG=${NEOVIM_TAG:15:-2}
-echo "Pulling JQ tag: ${NEOVIM_TAG}"
+echo "Pulling Neovim tag: ${NEOVIM_TAG}"
 
 NEOVIM_LATEST_URL=$(cat ./neovim_latest.json | grep browser_download_url | grep nvim-linux64.tar.gz)
+echo $NEOVIM_LATEST_URL
+exit
 NEOVIM_LATEST_URL=${NEOVIM_LATEST_URL:31:-1}
 rm ./neovim_latest.json
 echo $NEOVIM_LATEST_URL
