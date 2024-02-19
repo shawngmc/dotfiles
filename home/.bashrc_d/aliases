@@ -1,3 +1,8 @@
 # Use neovim
 alias vi="nvim"
 alias vim="nvim"
+
+# ll, etc.
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'

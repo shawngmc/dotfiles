@@ -1,3 +1,2 @@
 .config
-.ssh.homesick/repos/dotfiles/home/.config/scripts/cli
-.homesick/repos/dotfiles/home/.config/scripts/cli
+.bashrc.d

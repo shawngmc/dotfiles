@@ -5,7 +5,6 @@
 curl -s "https://api.github.com/repos/jqlang/jq/releases/latest" -o ./jq_latest.json 
 JQ_TAG=$(cat ./jq_latest.json | grep tag-name)
 JQ_TAG=${JQ_TAG:15:-2}
-echo $JQ_TAG
 echo "Pulling JQ tag: ${JQ_TAG}"
 
 JQ_LATEST_URL=$(cat ./jq_latest.json | grep browser_download_url | grep jq-linux-amd64)
