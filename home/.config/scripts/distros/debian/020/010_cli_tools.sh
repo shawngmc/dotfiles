@@ -13,15 +13,6 @@ PACKAGES+=("wl-clipboard")
 # Glances - top alternative
 PACKAGES+=("glances")
 
-# Powerline - nice automatic prompt visual
-PACKAGES+=("python3-powerline")
-
-# Neovim - better rebuild of vim
-PACKAGES+=("neovim")
-
-# Python3-neovim - Python3 support for Vim
-PACKAGES+=("python3-pynvim")
-
 # Hyperfine - benchmark a CLI command
 PACKAGES+=("hyperfine")
 
