@@ -5,36 +5,39 @@ PACKAGES=()
 
 # Python 3
 if [ -f $(which python3) ]; then
-    HAS_PYTHON=true
     echo "Python3 already installed..."
     python3 --version
-else
-    HAS_PYTHON=false
-    PACKAGES+=("python3")
-fi
 
-# Pip
-if [ $HAS_PYTHON -eq 0 ] & [ -f $(python3 -m pip) ]; then
-    echo "Pip already installed..."
+    # Pip
     python3 -m pip -V
+    if  [ $? -eq 0 ]; then
+        echo "Pip already installed..."
+    else
+        PACKAGES+=("python3-pip")
+    fi
+
+    # Pipx
+    which pipx
+    if [ $? -eq 0 ]; then
+        echo "Pipx already installed..."
+        pipx --version
+    else
+        # TODO: Block out for old RHEL7/8
+        PACKAGES+=("pipx")
+    fi
+
+    # Powerline
+    which powerline-daemon
+    if [ $? -eq 0 ]; then
+        echo "Powerline already installed..."
+        powerline-daemon -V
+    else
+        PACKAGES+=("powerline")
+    fi
 else
+    PACKAGES+=("python3")
     PACKAGES+=("python3-pip")
-fi
-
-# Pipx
-if [ $HAS_PYTHON -eq 0 ] & [ -f $(which pipx) ]; then
-    echo "Pipx already installed..."
-    pipx -V
-else
-    # TODO: Block out for old RHEL7/8
     PACKAGES+=("pipx")
-fi
-
-# Powerline
-if [ $HAS_PYTHON -eq 0 ] & [ -f $(which powerline-daemon) ]; then
-    echo "Powerline already installed..."
-    powerline-daemon -V
-else
     PACKAGES+=("powerline")
 fi
 
@@ -43,3 +46,6 @@ if [ "${ID}" = "debian" ] | [ "${ID}" = "ubuntu" ]; then
 elif [ "${ID}" = "redhat" ] | [ "${ID}" = "fedora" ] | [ "${ID}" = "rocky" ] | [ "${ID}" = "rhel" ]; then
     sudo yum install -y ${PACKAGES[@]}
 fi
+
+# Upgrade pip
+python3 -m pip install --user --upgrade pip

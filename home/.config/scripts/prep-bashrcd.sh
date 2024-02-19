@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat << EOF >> ~/.bashrc
+cat << 'EOF' >> ~/.bashrc
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
   for rc in ~/.bashrc.d/*; do
