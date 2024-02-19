@@ -37,9 +37,6 @@ PACKAGES+=("mc")
 # Diffing hexeditor
 PACKAGES+=("dhex")
 
-# CLI Spreadsheet
-PACKAGES+=("sc-im")
-
 # Testssl.sh
 PACKAGES+=("testssl.sh")
 
