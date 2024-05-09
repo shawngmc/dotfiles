@@ -1,0 +1,28 @@
+{
+  // Git: Allow sync w/o confirmation
+  "git.confirmSync": false,
+
+  // Git: Enable periodic fetch
+  "git.autofetch": true,
+
+  // Terminal: Disable multi-line paste warning
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+
+  // Terminal: Fix Conda/Powerline by rebuilding env
+  "terminal.integrated.inheritEnv": false,
+
+  // Editor: Make comments italicized
+  "editor.tokenColorCustomization": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+
+  // Use my preferred font
+  "editor.fontFamily": "'Cascadia Mono', 'Droid Sans Mono', 'monospace', monospace"
+}
