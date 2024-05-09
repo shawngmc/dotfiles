@@ -24,5 +24,5 @@
   },
 
   // Use my preferred font
-  "editor.fontFamily": "'Cascadia Mono', 'Droid Sans Mono', 'monospace', monospace"
+  "editor.fontFamily": "'Roboto Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace"
 }
