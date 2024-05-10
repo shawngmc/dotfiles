@@ -1,16 +1,17 @@
 {
-  // Git: Allow sync w/o confirmation
-  "git.confirmSync": false,
+  // Editor: Show brackets with colorization
+  "editor.bracketPairColorization.enabled": true,
 
-  // Git: Enable periodic fetch
-  "git.autofetch": true,
+  // Editor: Show bracket guides, but only the vertical line
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  
+  // Editor: Always highlight the portion of the minimap that is on screen
+  "editor.minimap.showSlider": "always",
 
-  // Terminal: Disable multi-line paste warning
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-
-  // Terminal: Fix Conda/Powerline by rebuilding env
-  "terminal.integrated.inheritEnv": false,
-
+  // Editor: Animated scroll to help keep positional context
+  "editor.smoothScrolling": true,
+  
   // Editor: Make comments italicized
   "editor.tokenColorCustomization": {
     "textMateRules": [
@@ -23,6 +24,34 @@
     ]
   },
 
-  // Use my preferred font
-  "editor.fontFamily": "'Roboto Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace"
+  // Editor: Use my preferred font
+  "editor.fontFamily": "'Roboto Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace",
+  
+  // Git: Allow sync w/o confirmation
+  "git.confirmSync": false,
+
+  // Git: Enable periodic fetch
+  "git.autofetch": true,
+
+  // Terminal: Disable multi-line paste warning
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+
+  // Terminal: Fix Conda/Powerline by rebuilding env
+  "terminal.integrated.inheritEnv": false,
+  
+  // Terminal: Prevent the minimum contrast ratio from changing colors (breaks powerline in some cases, for example)
+  "terminal.integrated.minimumContrastRatio": 1,
+
+  // Window UI: Make editor tabs short
+  "window.density.editorTabHeight": "compact",
+
+  // Workbench: Move the panel to the right - this lets you see the terminal and your code simulateously.
+  // Disabled while I try it
+  // "workbench.panel.defaultLocation": "left",
+
+  // Workbench: Keep pinned tabs (which I should try to use more) on a separate row
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+
+  // Workbench: Move the sidebar to the right - this means that opening/closing the sidebar doesn't move your code!
+  "workbench.sideBar.location": "right",
 }
