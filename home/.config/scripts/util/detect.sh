@@ -183,3 +183,18 @@ support_flatpak() {
     echo 0;
   fi
 }
+
+support_conda() {
+  CONDA_RESPONSE=$(conda list)
+  if (( $? = 0 )); then
+    echo "Conda support detected..." >&2;
+    echo 1;
+  else
+    echo "Conda support not found..." >&2;
+    echo 0;
+  fi
+}
+
+is_airgapped() {
+
+}
