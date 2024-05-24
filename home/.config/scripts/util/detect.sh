@@ -196,5 +196,5 @@ support_conda() {
 }
 
 is_airgapped() {
-
+  echo 1;
 }
