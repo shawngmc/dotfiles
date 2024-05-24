@@ -64,6 +64,24 @@ detect_package_manager() {
   esac
 }
 
+get_package_manager_install_command() {
+  DETECTED_PACKAGE_MANAGER=detect_package_manager();
+  case "${DETECTED_OS}" in
+    apt)
+      return "apt install -y";
+      ;;
+
+    dnf)
+      return "dnf install -y";
+      ;;
+
+    *)
+      echo "Unclear how package manager ${DETECTED_PACKAGE_MANAGER} works, but I don't handle it yet..." >&2;
+      exit 1;
+      ;;
+  esac
+}
+
 detect_os() {
   case "${ID}" in
     fedora)
