@@ -33,7 +33,7 @@ source /etc/os-release
 
 # Check the CPU first, and just exit if not X86_64
 get_proc_type() {
-  DETECTED_PROC_TYPE="$(uname -p)"
+  DETECTED_PROC_TYPE="$(uname -p)";
   if [[ "${DETECTED_PROC_TYPE}" == "x86_64" ]]; then
     echo "Detected ${DETECTED_PROC_TYPE}..." >&2;
     echo "${DETECTED_PROC_TYPE}";
@@ -44,7 +44,7 @@ get_proc_type() {
 }
 
 detect_package_manager() {
-  DETECTED_OS=detect_supported_os();
+  DETECTED_OS=detect_supported_os;
   case "${DETECTED_OS}" in
     fedora)
     rocky)
@@ -65,7 +65,7 @@ detect_package_manager() {
 }
 
 get_package_manager_install_command() {
-  DETECTED_PACKAGE_MANAGER=detect_package_manager();
+  DETECTED_PACKAGE_MANAGER=detect_package_manager;
   case "${DETECTED_OS}" in
     apt)
       return "apt install -y";
@@ -181,7 +181,7 @@ detect_os_version() {
 }
 
 support_snap() {
-  SNAP_RESPONSE=$(snap version)
+  SNAP_RESPONSE=$(snap version);
   if (( $? = 0 )); then
     echo "Snap support detected..." >&2;
     echo 1;
@@ -192,7 +192,7 @@ support_snap() {
 }
 
 support_flatpak() {
-  FLATPAK_RESPONSE=$(flatpak --version)
+  FLATPAK_RESPONSE=$(flatpak --version);
   if (( $? = 0 )); then
     echo "Flatpak support detected..." >&2;
     echo 1;
@@ -203,7 +203,7 @@ support_flatpak() {
 }
 
 support_conda() {
-  CONDA_RESPONSE=$(conda list)
+  CONDA_RESPONSE=$(conda list);
   if (( $? = 0 )); then
     echo "Conda support detected..." >&2;
     echo 1;
