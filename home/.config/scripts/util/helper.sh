@@ -243,6 +243,18 @@ activate_default_conda() {
   fi
 }
 
+does_cli_tool_exist() {
+  TOOL=$1
+  CONDA_RESPONSE=$(which ${TOOL});
+  if (( $? = 0 )); then
+    echo "${TOOL} found..." >&2;
+    echo 0;
+  else
+    echo "${TOOL} not found..." >&2;
+    echo 1; 
+  fi
+}
+
 is_airgapped() {
   echo "Airgapped check NYI..." >&2;
   echo 1;
