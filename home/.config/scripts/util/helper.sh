@@ -215,10 +215,10 @@ support_flatpak() {
   FLATPAK_RESPONSE=$(flatpak --version);
   if (( $? = 0 )); then
     echo "Flatpak support detected..." >&2;
-    echo 1;
+    echo 0;
   else
     echo "Flatpak support not found..." >&2;
-    echo 0;
+    echo 1;
   fi
 }
 
@@ -226,13 +226,24 @@ support_conda() {
   CONDA_RESPONSE=$(conda list);
   if (( $? = 0 )); then
     echo "Conda support detected..." >&2;
-    echo 1;
+    echo 0;
   else
     echo "Conda support not found..." >&2;
-    echo 0;
+    echo 1;
+  fi
+}
+
+activate_default_conda() {
+  SUPPORTED=support_conda
+  if (( $SUPPORTED = 0 )); then
+    conda activate base;
+  else
+    echo "Conda support not found..." >&2;
+    echo 1;
   fi
 }
 
 is_airgapped() {
+  echo "Airgapped check NYI..." >&2;
   echo 1;
 }
