@@ -64,15 +64,35 @@ detect_package_manager() {
   esac
 }
 
-get_package_manager_install_command() {
+find_exact_os_package() {
+  PACKAGE=$1
   DETECTED_PACKAGE_MANAGER=detect_package_manager;
-  case "${DETECTED_OS}" in
+  case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
-      return "apt install -y";
+      apt search ^${PACKAGE}$;
       ;;
 
     dnf)
-      return "dnf install -y";
+      dnf repoquery-n ${PACKAGE};
+      ;;
+
+    *)
+      echo "Unclear how package manager ${DETECTED_PACKAGE_MANAGER} works, but I don't handle it yet..." >&2;
+      exit 1;
+      ;;
+  esac
+}
+
+install_os_package() {
+  PACKAGE=$1
+  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+  case "${DETECTED_PACKAGE_MANAGER}" in
+    apt)
+      apt install -y ${PACKAGE};
+      ;;
+
+    dnf)
+      dnf install -y ${PACKAGE};
       ;;
 
     *)
