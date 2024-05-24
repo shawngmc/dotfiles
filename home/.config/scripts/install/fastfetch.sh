@@ -9,7 +9,7 @@ echo "Creating config...";
 fastfetch --structure Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors --gen-config
 
 echo "Adding .bashrc.d file...";
-cat << EOF > ~/.bashrc.d/fastfetch.sh
+cat << 'EOF' > ~/.bashrc.d/fastfetch.sh
 #!/bin/bash
 
 # Run fastfetch if present
