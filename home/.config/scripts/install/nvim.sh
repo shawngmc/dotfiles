@@ -3,6 +3,11 @@
 source ../util/helper.sh
 
 if (( is_airgapped = 1 )); then
+  if (( does_cli_tool_exist jq == 1 )); then
+    echo "JQ is required to install FZF from repo..." >&2;
+    exit 1
+  fi
+  
   # Have to save pull from GH to protect newlines
   curl -s "https://api.github.com/repos/neovim/neovim/releases/latest" -o ./neovim_latest.json;
   NEOVIM_TAG=$(cat ./neovim_latest.json | grep tag_name);
