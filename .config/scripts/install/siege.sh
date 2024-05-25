@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../util/helper.sh
+source "$(dirname $0)/../util/helper.sh"
 
 echo "Installing siege from package repo...";
-install_package siege;
+install_os_package siege;
