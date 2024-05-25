@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source ../util/helper.sh
+source "$(dirname $0)/../util/helper.sh"
 
 echo "Installing vscode..."
-if (( is_airgapped = 1 )); then
-  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+if (( $(is_airgapped) == 1 )); then
+  DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
       FILETYPE=deb
@@ -21,7 +21,7 @@ if (( is_airgapped = 1 )); then
   esac
   FILENAME="/tmp/vscode.${FILETYPE}"
   URL="https://code.visualstudio.com/sha/download?build=stable&os=linux-${FILETYPE}-x64"
-  wget -O ${FILENAME} "\'${URL}\'"
+  wget -O ${FILENAME} "${URL}"
   install_os_package_manual ${FILENAME}
   rm ${FILENAME}
 else
