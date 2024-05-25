@@ -3,18 +3,20 @@ Shawn McNaughton's dotfiles and system setup scripts in a homesick-compatible pa
 
 
 # Usage
-### Debian/Ubuntu
-1. Install homesick 
+## Distro-Agnostic via YADM
+1. Clone the TADM Git Repo
 ```
-sudo apt install homesick -y
+git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
 ```
-2. Clone and activate
+2. Symlink YADM
 ```
-homesick clone git@github.com:shawngmc/dotfiles
-homesick link dotfiles
+mkdir -p ~/.local/bin
+ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
-3. ??? (Per desktop, per-distro)
-
+2. Clone repo
+```
+yadm clone https://github.com/shawngmc/dotfiles.gitgit cl
+```
 
 # Changes
 ## Desktop Tweaks
