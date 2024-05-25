@@ -15,7 +15,7 @@ ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
 2. Clone repo
 ```
-yadm clone https://github.com/shawngmc/dotfiles.gitgit cl
+yadm clone https://github.com/shawngmc/dotfiles.git
 ```
 
 # Changes
@@ -23,7 +23,7 @@ yadm clone https://github.com/shawngmc/dotfiles.gitgit cl
 - Enable Taskbar Window Grouping (eg Win 8/10)
 - Dark Theme
 - Terminal: Show running app titles
-- Enable Aero Snap-style window tiling 
+- Enable Aero Snap-style window tiling
   - Side-by-side via Super+Left/Right
   - Maximize via Super+Up
   - De-Maximize via Super+Down
@@ -32,7 +32,7 @@ yadm clone https://github.com/shawngmc/dotfiles.gitgit cl
 
 ## Shell Tweaks
 - Set Windows Title to Current Path
-- Enable 
+- Enable
 
 ## Apps
 ### Installed
