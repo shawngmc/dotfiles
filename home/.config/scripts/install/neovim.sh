@@ -4,7 +4,7 @@ source ../util/helper.sh
 
 if (( is_airgapped = 1 )); then
   if (( does_cli_tool_exist jq == 1 )); then
-    echo "JQ is required to install FZF from repo..." >&2;
+    echo "JQ is required to install Neovim from repo..." >&2;
     exit 1
   fi
   
