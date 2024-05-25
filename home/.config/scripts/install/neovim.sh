@@ -27,6 +27,9 @@ else
   install_package neovim;
 fi
 
+# Symlink as default editor
+sudo alternatives --install /usr/bin/editor nvim /bin/nvim 1
+
 # Install Python provider support
 if (( support_conda = 0 )); then
   activate_default_conda;
