@@ -24,3 +24,7 @@
 - pdftk - PDF Toolkit
 - yq - CLI tool for managing YAML files
 - dasel - CLI tool for managing JSON/YAML/XML/etc files
+- vscode - handy IDE
+- VLC - video player
+- guake - pop-up terminal
+- powerline-fonts - nice nerd fonts
