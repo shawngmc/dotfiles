@@ -35,31 +35,33 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 - Enable
 
 ## Apps
-| App | Online Install | Airgap Install | Configuration | Purpose |
-|-----|----------------|----------------|---------------|---------|
-| conda |  |  |  |  Manage Python versions and environments |
-| fastfetch |  |  |  | Quick system info tool |
-| fzf |  |  |  | Fuzzy finder |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-- conda:
-- fastfetch: 
-- fzf: 
-- httpie: More friendly 'curl' command
-- jq-repl: USe JQ and FZF to dynamically preview JSONPath queries
-- jq: CLI tool for managing JSON files
-- neovim: Better VIM with Python scripting and more
-- nvm: Manage node.js versions
-- powerline: Inituitive command prompt with Git and K8s support
-- siege: HTTP Benchmarking utility
-- testssl: Test TLS web server security fingerprint
-- vlc: video player
-  - TODO: Default video player
-- vscode: Popular IDE
-  - TODO: extensions, config settings
+| App               | Online Install | Airgap Install | Configuration | Autostart | Purpose |
+|-------------------|----------------|----------------|---------------|-----------|---------|
+| conda             |     |     |     |     | Manage Python versions and environments |
+| fastfetch         |     |     |     |     | Quick system info tool |
+| fzf               |     |     |     |     | Fuzzy finder |
+| httpie(http)      |     |     |     |     | More friendly 'curl' command |
+| jq                |     |     |     |     | CLI tool for managing JSON files |
+| jq-repl           |     |     |     |     | Use JQ and FZF to dynamically preview JSONPath queries |
+| neovim            |     |     |     |     | Better VIM with Python scripting and more |
+| nvm               |     |     |     |     | Manage node.js versions |
+| powerline         |     |     |     |     | Inituitive command prompt with Git and K8s support |
+| siege             |     |     |     |     | HTTP Benchmarking utility |
+| testssl           |     |     |     |     | Test TLS web server security fingerprint |
+| vlc               |     |     |     |     | Video player |
+| vscode            |     |     | Y   |     | Flexible lightweight IDE |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
+|                   |     |     |     |     | |
 
 
 # TODO
