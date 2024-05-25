@@ -11,6 +11,7 @@
 - siege: HTTP Benchmarking utility
 - testssl: Test TLS web server security fingerprint
 - vscode: Popular IDE
+- VLC - video player
 
 
 # TODO
@@ -25,6 +26,5 @@
 - pdftk - PDF Toolkit
 - yq - CLI tool for managing YAML files
 - dasel - CLI tool for managing JSON/YAML/XML/etc files
-- VLC - video player
 - guake - pop-up terminal
 - powerline-fonts - nice nerd fonts
