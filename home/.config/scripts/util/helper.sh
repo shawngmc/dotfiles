@@ -102,6 +102,25 @@ install_os_package() {
   esac
 }
 
+install_os_package_manual() {
+  PACKAGE_PATH=$1
+  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+  case "${DETECTED_PACKAGE_MANAGER}" in
+    apt)
+      apt install ${PACKAGE};
+      ;;
+
+    dnf)
+      dnf localinstall -y ${PACKAGE_PATH};
+      ;;
+
+    *)
+      echo "Unclear how package manager ${DETECTED_PACKAGE_MANAGER} works, but I don't handle it yet..." >&2;
+      exit 1;
+      ;;
+  esac
+}
+
 detect_os() {
   case "${ID}" in
     fedora)
