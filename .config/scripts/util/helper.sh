@@ -133,7 +133,7 @@ detect_os() {
       echo "Detected ${ID}..." >&2;
       echo "${ID}"
       ;;
-  
+
     *)
       echo "ID ${ID} is not supported yet..." >&2;
       exit 1;
@@ -149,7 +149,7 @@ detect_os_version() {
       # https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/
       DETECTED_DISTRO="${ID}";
       echo "Detected ${ID}..." >&2;
-      if [ -z ${PLATFORM_ID+x} ]; then 
+      if [ -z ${PLATFORM_ID+x} ]; then
         echo "PLATFORM_ID is not set, so either this is a very old Fedora or something is wrong with /etc/os_release." >&2;
         exit 1;
       else
@@ -166,12 +166,12 @@ detect_os_version() {
         fi
       fi
       ;;
-  
+
     rhel) ;&
     rocky)
       DETECTED_DISTRO="${ID}";
       echo "Detected ${ID}..." >&2;
-      if [ -z ${PLATFORM_ID+x} ]; then 
+      if [ -z ${PLATFORM_ID+x} ]; then
         echo "PLATFORM_ID is not set, so either this is a very old ${ID} or something is wrong with /etc/os_release." >&2;
         exit 1;
       else
@@ -188,7 +188,7 @@ detect_os_version() {
         fi
       fi
       ;;
-  
+
     ubuntu)
       DETECTED_DISTRO="${ID}";
       echo "Detected ${ID}...";
@@ -200,7 +200,7 @@ detect_os_version() {
         exit 1;
       fi
       ;;
-  
+
     debian)
       DETECTED_DISTRO="${ID}"
       echo "Detected ${ID}..."
@@ -213,7 +213,7 @@ detect_os_version() {
       fi
       DETECTED_PACKAGE_MANAGER="apt";
       ;;
-  
+
     *)
       echo "ID ${ID} is not recognized yet..." >&2;
       exit 1;
@@ -223,7 +223,7 @@ detect_os_version() {
 
 support_snap() {
   SNAP_RESPONSE=$(snap version 2>/dev/null);
-  if (( $? = 0 )); then
+  if (( $? == 0 )); then
     echo "Snap support detected..." >&2;
     echo 1;
   else
@@ -234,7 +234,7 @@ support_snap() {
 
 support_flatpak() {
   FLATPAK_RESPONSE=$(flatpak --version 2>/dev/null);
-  if (( $? = 0 )); then
+  if (( $? == 0 )); then
     echo "Flatpak support detected..." >&2;
     echo 0;
   else
@@ -245,7 +245,7 @@ support_flatpak() {
 
 support_conda() {
   CONDA_RESPONSE=$(conda list 2>/dev/null);
-  if (( $? = 0 )); then
+  if (( $? == 0 )); then
     echo "Conda support detected..." >&2;
     echo 0;
   else
@@ -256,7 +256,7 @@ support_conda() {
 
 activate_default_conda() {
   SUPPORTED=$(support_conda);
-  if (( $SUPPORTED = 0 )); then
+  if (( $SUPPORTED == 0 )); then
     conda activate base;
   else
     echo "Conda support not found..." >&2;
@@ -267,12 +267,12 @@ activate_default_conda() {
 does_cli_tool_exist() {
   TOOL=$1
   CONDA_RESPONSE=$(which ${TOOL} 2>/dev/null);
-  if (( $? = 0 )); then
+  if (( $? == 0 )); then
     echo "${TOOL} found..." >&2;
     echo 0;
   else
     echo "${TOOL} not found..." >&2;
-    echo 1; 
+    echo 1;
   fi
 }
 
