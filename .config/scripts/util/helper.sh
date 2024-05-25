@@ -1,4 +1,4 @@
-$!/bin/bash
+#!/bin/bash
 
 # /etc/os-release is the authoritative way to identify a linux distro
 # Standard ref: https://www.freedesktop.org/software/systemd/man/latest/os-release.html
@@ -44,17 +44,19 @@ get_proc_type() {
 }
 
 detect_package_manager() {
-  DETECTED_OS=detect_supported_os;
+  DETECTED_OS=$(detect_os);
   case "${DETECTED_OS}" in
-    fedora)
-    rocky)
-    rhel)
-      return "dnf";
+    "fedora") ;&
+    "rocky") ;&
+    "rhel")
+      echo "dnf";
+      return 0;
       ;;
 
-    ubuntu)
-    debian)
-      return "apt";
+    "ubuntu") ;&
+    "debian")
+      echo "apt";
+      return 0;
       ;;
 
     *)
@@ -66,14 +68,14 @@ detect_package_manager() {
 
 find_exact_os_package() {
   PACKAGE=$1
-  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+  DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
-      apt search ^${PACKAGE}$;
+      sudo apt search ^${PACKAGE}$;
       ;;
 
     dnf)
-      dnf repoquery-n ${PACKAGE};
+      sudo dnf repoquery-n ${PACKAGE};
       ;;
 
     *)
@@ -85,14 +87,14 @@ find_exact_os_package() {
 
 install_os_package() {
   PACKAGE=$1
-  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+  DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
-      apt install -y ${PACKAGE};
+      sudo apt install -y ${PACKAGE};
       ;;
 
     dnf)
-      dnf install -y ${PACKAGE};
+      sudo dnf install -y ${PACKAGE};
       ;;
 
     *)
@@ -104,14 +106,14 @@ install_os_package() {
 
 install_os_package_manual() {
   PACKAGE_PATH=$1
-  DETECTED_PACKAGE_MANAGER=detect_package_manager;
+  DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
-      apt install ${PACKAGE};
+      sudo apt install ${PACKAGE_PATH};
       ;;
 
     dnf)
-      dnf localinstall -y ${PACKAGE_PATH};
+      sudo dnf localinstall -y ${PACKAGE_PATH};
       ;;
 
     *)
@@ -123,10 +125,10 @@ install_os_package_manual() {
 
 detect_os() {
   case "${ID}" in
-    fedora)
-    rhel)
-    rocky)
-    ubuntu)
+    fedora) ;&
+    rhel) ;&
+    rocky) ;&
+    ubuntu) ;&
     debian)
       echo "Detected ${ID}..." >&2;
       echo "${ID}"
@@ -165,7 +167,7 @@ detect_os_version() {
       fi
       ;;
   
-    rhel)
+    rhel) ;&
     rocky)
       DETECTED_DISTRO="${ID}";
       echo "Detected ${ID}..." >&2;
@@ -220,7 +222,7 @@ detect_os_version() {
 }
 
 support_snap() {
-  SNAP_RESPONSE=$(snap version);
+  SNAP_RESPONSE=$(snap version 2>/dev/null);
   if (( $? = 0 )); then
     echo "Snap support detected..." >&2;
     echo 1;
@@ -231,7 +233,7 @@ support_snap() {
 }
 
 support_flatpak() {
-  FLATPAK_RESPONSE=$(flatpak --version);
+  FLATPAK_RESPONSE=$(flatpak --version 2>/dev/null);
   if (( $? = 0 )); then
     echo "Flatpak support detected..." >&2;
     echo 0;
@@ -242,7 +244,7 @@ support_flatpak() {
 }
 
 support_conda() {
-  CONDA_RESPONSE=$(conda list);
+  CONDA_RESPONSE=$(conda list 2>/dev/null);
   if (( $? = 0 )); then
     echo "Conda support detected..." >&2;
     echo 0;
@@ -253,7 +255,7 @@ support_conda() {
 }
 
 activate_default_conda() {
-  SUPPORTED=support_conda
+  SUPPORTED=$(support_conda);
   if (( $SUPPORTED = 0 )); then
     conda activate base;
   else
@@ -264,7 +266,7 @@ activate_default_conda() {
 
 does_cli_tool_exist() {
   TOOL=$1
-  CONDA_RESPONSE=$(which ${TOOL});
+  CONDA_RESPONSE=$(which ${TOOL} 2>/dev/null);
   if (( $? = 0 )); then
     echo "${TOOL} found..." >&2;
     echo 0;

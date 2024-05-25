@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run conda activate if present, then enable powerline
-CONDA_PATH=$(which conda)
+CONDA_PATH=$(which condai 2>/dev/null)
 if [ $? -eq 0 ]; then
   conda activate base
   POWERLINE_PATH=$(python3 -m pip show powerline-status | grep "Location:" | sed "s/Location: //")/powerline

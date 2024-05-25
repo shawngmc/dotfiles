@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source ../util/helper.sh
+source $(dirname "$0")/../util/helper.sh
 
 echo "Installing fastfetch from package repo...";
-install_package fastfetch;
+install_os_package fastfetch;
 
-echo "Creating config...";
-fastfetch --structure Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors --gen-config
+#echo "Creating config...";
+#fastfetch --structure Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors --gen-config
 
 # echo "Adding .bashrc.d file...";
 # cat << 'EOF' > ~/.bashrc.d/fastfetch.sh
