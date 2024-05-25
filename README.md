@@ -35,10 +35,19 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 - Enable
 
 ## Apps
-# Currently Added
-- conda: Manage Python versions and environments
-- fastfetch: Quick system info tool
-- fzf: Fuzzy finder
+| App | Online Install | Airgap Install | Configuration | Purpose |
+|-----|----------------|----------------|---------------|---------|
+| conda |  |  |  |  Manage Python versions and environments |
+| fastfetch |  |  |  | Quick system info tool |
+| fzf |  |  |  | Fuzzy finder |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+- conda:
+- fastfetch: 
+- fzf: 
 - httpie: More friendly 'curl' command
 - jq-repl: USe JQ and FZF to dynamically preview JSONPath queries
 - jq: CLI tool for managing JSON files
