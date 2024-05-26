@@ -42,9 +42,12 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | dasel             | Y   | N    | N    | N/A  | N/A  | CLI tool for managing JSON/YAML/XML/etc files |
 | fastfetch         | Y   | N    | Y    | Y    | Y    | Quick system info tool |
 | fzf               | Y   | N    | Y    | N/A  | N/A  | Fuzzy finder |
+| glances           | Y   | N    | Y    | N/A  | N/A  | top alternative |
+| goaccess          | Y   | N    | Y    | N/A  | N/A | Live web log analysis tool with built-in queries |
 | httpie(http)      | NYI | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
 | jq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing JSON files |
 | jq-repl           | N/A | Y    | NYI  | N/A  | N/A  | Use JQ and FZF to dynamically preview JSONPath queries |
+| lnav              | NYI |     | NYI    |     |     | Live web log analysis tool with complex queries |
 | neovim            | Y   | N    | Y    | Y    | N/A  | Better VIM with Python scripting and more |
 | nvm               | Y   | N    | N    | N/A  | N/A  | Manage node.js versions |
 | powerline         | N/A | Y    | NYI  | Y    | Y    | Inituitive command prompt with Git and K8s support |
@@ -55,11 +58,8 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | yq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing YAML files | 
 |                   |     |     |     |     |     | |
 | dhex              | NYI |     | NYI (D/U)    |     |     | Diffing hexeditor |
-| glances           | NYI |     | NYI     |     |     | top alternative |
-| goaccess          | NYI |     | NYI     |     |     | Live web log analysis tool with built-in queries|
 | guake             | N/A |     | NYI    |     |     | pop-up terminal |
-| hyperfine         | NYI |     | NYI    |     |     | benchmark a CLI command |
-| lnav              | NYI |     | NYI    |     |     | Live web log analysis tool with complex queries |
+| hyperfine         | Y   | N    | Y    | N/A  | N/A | benchmark a CLI command |
 | mc                | N/A |     | NYI    |     |     | TUI file manager |
 | pdftk             | N/A |     | NYI    |     |     | PDF Toolkit |
 | powerline-fonts   | N/A |     | NYI    |     |     | nice nerd fonts (fonts-powerline on D/U, powerline-fonts on R/F, and extra 3P package from GH |
