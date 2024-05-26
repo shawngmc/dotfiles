@@ -77,5 +77,6 @@ yadm clone https://github.com/shawngmc/dotfiles.git
   - Just add script to repo?
 - powerline
   - offline installer
+  - do NOT use pypi; it's not being updated!
 - vscode
   - extensions
