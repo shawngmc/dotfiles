@@ -2,5 +2,9 @@
 
 source "$(dirname $0)/../util/helper.sh"
 
-echo "Installing siege from package repo...";
-install_os_package siege;
+if (( is_airgapped = 1 )); then
+  brew install siege;
+else
+  echo "Installing older version from package repo...";
+  install_os_package siege;
+fi

@@ -7,7 +7,7 @@ if (( $(support_conda) == 0 )); then
 fi
 
 echo "Installing powerline..."
-python3 -m pip install --user powerline-status powerline-kubernetes
+python3 -m pip install --user git+https://github.com/powerline/powerline.git@develop powerline-kubernetes
 
 #echo "Adding .bashrc.d file...";
 #cat << 'EOF' > ~/.bashrc.d/powerline.sh
