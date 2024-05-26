@@ -37,58 +37,45 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 ## Apps
 | App               | Online Install | Airgap Install | Configuration | Autostart | Purpose |
 |-------------------|----------------|----------------|---------------|-----------|---------|
-| conda             |     |     |     |     | Manage Python versions and environments |
-| fastfetch         |     |     |     |     | Quick system info tool |
-| fzf               |     |     |     |     | Fuzzy finder |
-| httpie(http)      |     |     |     |     | More friendly 'curl' command |
-| jq                |     |     |     |     | CLI tool for managing JSON files |
-| jq-repl           |     |     |     |     | Use JQ and FZF to dynamically preview JSONPath queries |
-| neovim            |     |     |     |     | Better VIM with Python scripting and more |
-| nvm               |     |     |     |     | Manage node.js versions |
-| powerline         |     |     |     |     | Inituitive command prompt with Git and K8s support |
-| siege             |     |     |     |     | HTTP Benchmarking utility |
-| testssl           |     |     |     |     | Test TLS web server security fingerprint |
-| vlc               |     |     |     |     | Video player |
-| vscode            |     |     | Y   |     | Flexible lightweight IDE |
+| conda             | Y    | Y    |      | Y    | Manage Python versions and environments |
+| fastfetch         | N    | Y    | Y    | Y    | Quick system info tool |
+| fzf               | Y    | Y    | N/A  | N/A  | Fuzzy finder |
+| httpie(http)      | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
+| jq                | Y    | Y    | N/A  | N/A  | CLI tool for managing JSON files |
+| jq-repl           | Y    | NYI  | N/A  | N/A  | Use JQ and FZF to dynamically preview JSONPath queries |
+| neovim            | Y    | Y    | Y    | N/A  | Better VIM with Python scripting and more |
+| nvm               | Y    | N    | N/A  | N/A  | Manage node.js versions |
+| powerline         | Y    | NYI  | Y    | Y    | Inituitive command prompt with Git and K8s support |
+| siege             | N    | Y    | N/A  | N/A  | HTTP Benchmarking utility |
+| testssl           | Y    | Y    | N/A  | Y    | Test TLS web server security fingerprint |
+| vlc               | N    | Y    | NYI  | N    | Video player |
+| vscode            | Y    | N    | Part | N    | Flexible lightweight IDE |
 |                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
-|                   |     |     |     |     | |
+| dasel             |     |     |     |     | CLI tool for managing JSON/YAML/XML/etc files |
+| dhex              |     |     |     |     | Diffing hexeditor |
+| glances           |     |     |     |     | top alternative |
+| goaccess          |     |     |     |     | Live web log analysis tool |
+| guake             |     |     |     |     | pop-up terminal |
+| hyperfine         |     |     |     |     | benchmark a CLI command |
+| lnav              |     |     |     |     | Live web log analysis tool |
+| mc                |     |     |     |     | TUI file manager |
+| pdftk             |     |     |     |     | PDF Toolkit |
+| powerline-fonts   |     |     |     |     | nice nerd fonts |
+| visidata          |     |     |     |     | TUI-based spreadsheet |
+| wl-clipboard      |     |     |     |     | CLI Clipboard tools for wayland |
+| xset              |     |     |     |     | CLI Clipboard tools for X |
+| yq                |     |     |     |     | CLI tool for managing YAML files | 
 
 
 # TODO
-- xset: CLI Clipboard tools for X
-- wl-clipboard: CLI Clipboard tools for wayland
-- glances: top alternative
-- hyperfine: benchmark a CLI command
-- goaccess: Live web log analysis tool
-- lnav: Live web log analysis tool
-- mc: TUI file manager
-- dhex: Diffing hexeditor
-- pdftk: PDF Toolkit
-- yq: CLI tool for managing YAML files
-- dasel: CLI tool for managing JSON/YAML/XML/etc files
-- guake: pop-up terminal
-  - TODO: keybinds, fonts, config settings
-- powerline-fonts: nice nerd fonts
-
-### Installed
-- Glances - TUI-based system monitor
-- Goaccess - Real-time web log analyzer and interactive viewer
-- Gnome-Terminal - Solid terminal, works outside of Gnome WM
-- mc - TUI-base file manager
-- neofetch - shell system summary
-- Powerline - Better dynamic terminal prompt
-- Tabbed - make any embeddable X app a tabbed app
-- VIM-Nox - VIM with python preloaded
-
-## Wishlist
-- Visidata - TUI-based spreadsheet
+- Installers for missing tools
+- guake
+  - keybinds
+  - fonts
+  - other config settings
+- jq-repl
+  - Just add script to repo?
+- powerline
+  - offline installer
+- vscode
+  - extensions
