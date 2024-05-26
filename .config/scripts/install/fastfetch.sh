@@ -2,8 +2,12 @@
 
 source $(dirname "$0")/../util/helper.sh
 
-echo "Installing fastfetch from package repo...";
-install_os_package fastfetch;
+if (( is_airgapped = 1 )); then
+  brew install fastfetch
+else
+  echo "Installing older version from package repo...";
+  install_os_package fastfetch;
+fi
 
 #echo "Creating config...";
 #fastfetch --structure Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors --gen-config
