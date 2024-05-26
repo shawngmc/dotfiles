@@ -37,16 +37,17 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 ## Apps
 | App               | Brew | Manual Online Install | Airgap Install | Configuration | Autostart | Purpose |
 |-------------------|------|----------------|----------------|---------------|-----------|---------|
-| conda             | NYI | Y    | Y    | N/A  | Y    | Manage Python versions and environments |
-| fastfetch         | NYI | N    | Y    | Y    | Y    | Quick system info tool |
-| fzf               | NYI | Y    | Y    | N/A  | N/A  | Fuzzy finder |
+| brew              | N/A | Y    | N/A  | N/A  | Y    | Distro-agnostic package manager |
+| conda             | N/A | Y    | Y    | N/A  | Y    | Manage Python versions and environments |
+| fastfetch         | Y   | N    | Y    | Y    | Y    | Quick system info tool |
+| fzf               | Y   | N    | Y    | N/A  | N/A  | Fuzzy finder |
 | httpie(http)      | NYI | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
-| jq                | NYI | Y    | Y    | N/A  | N/A  | CLI tool for managing JSON files |
+| jq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing JSON files |
 | jq-repl           | N/A | Y    | NYI  | N/A  | N/A  | Use JQ and FZF to dynamically preview JSONPath queries |
-| neovim            | NYI | Y    | Y    | Y    | N/A  | Better VIM with Python scripting and more |
-| nvm               | NYI | Y    | N    | N/A  | N/A  | Manage node.js versions |
+| neovim            | Y   | N    | Y    | Y    | N/A  | Better VIM with Python scripting and more |
+| nvm               | Y   | N    | N    | N/A  | N/A  | Manage node.js versions |
 | powerline         | N/A | Y    | NYI  | Y    | Y    | Inituitive command prompt with Git and K8s support |
-| siege             | NYI | N    | Y    | N/A  | N/A  | HTTP Benchmarking utility |
+| siege             | Y   | N    | Y    | N/A  | N/A  | HTTP Benchmarking utility |
 | testssl           | NYI | Y    | Y    | N/A  | Y    | Test TLS web server security fingerprint |
 | vlc               | NYI | N    | Y    | NYI  | N    | Video player |
 | vscode            | N/A | Y    | N/A  | Part | N    | Flexible lightweight IDE |
@@ -77,6 +78,5 @@ yadm clone https://github.com/shawngmc/dotfiles.git
   - Just add script to repo?
 - powerline
   - offline installer
-  - do NOT use pypi; it's not being updated!
 - vscode
   - extensions
