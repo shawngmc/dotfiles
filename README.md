@@ -39,6 +39,7 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 |-------------------|------|----------------|----------------|---------------|-----------|---------|
 | brew              | N/A | Y    | N/A  | N/A  | Y    | Distro-agnostic package manager |
 | conda             | N/A | Y    | Y    | N/A  | Y    | Manage Python versions and environments |
+| dasel             | Y   | N    | N    | N/A  | N/A  | CLI tool for managing JSON/YAML/XML/etc files |
 | fastfetch         | Y   | N    | Y    | Y    | Y    | Quick system info tool |
 | fzf               | Y   | N    | Y    | N/A  | N/A  | Fuzzy finder |
 | httpie(http)      | NYI | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
@@ -51,8 +52,8 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | testssl           | NYI | Y    | Y    | N/A  | Y    | Test TLS web server security fingerprint |
 | vlc               | NYI | N    | Y    | NYI  | N    | Video player |
 | vscode            | N/A | Y    | N/A  | Part | N    | Flexible lightweight IDE |
+| yq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing YAML files | 
 |                   |     |     |     |     |     | |
-| dasel             | NYI |     | N/A |     |     | CLI tool for managing JSON/YAML/XML/etc files |
 | dhex              | NYI |     | NYI (D/U)    |     |     | Diffing hexeditor |
 | glances           | NYI |     | NYI     |     |     | top alternative |
 | goaccess          | NYI |     | NYI     |     |     | Live web log analysis tool with built-in queries|
@@ -65,7 +66,6 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | visidata          | N/A |     | NYI (D/U)    |     |     | TUI-based spreadsheet |
 | wl-clipboard      | N/A |     | NYI (ex. EL8)    |     |     | CLI Clipboard tools for wayland |
 | xsel              | NYI |     | NYI    |     |     | CLI Clipboard tools for X |
-| yq                | NYI |     | NYI (ex. EL8/9)    |     |     | CLI tool for managing YAML files | 
 
 
 # TODO
