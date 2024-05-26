@@ -37,7 +37,7 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 ## Apps
 | App               | Online Install | Airgap Install | Configuration | Autostart | Purpose |
 |-------------------|----------------|----------------|---------------|-----------|---------|
-| conda             | Y    | Y    |      | Y    | Manage Python versions and environments |
+| conda             | Y    | Y    | N/A  | Y    | Manage Python versions and environments |
 | fastfetch         | N    | Y    | Y    | Y    | Quick system info tool |
 | fzf               | Y    | Y    | N/A  | N/A  | Fuzzy finder |
 | httpie(http)      | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
