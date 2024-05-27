@@ -11,6 +11,7 @@ if (( $(is_airgapped) == 1 )); then
   mkdir -pv ~/.local/bin
 
   tar -xvf ${TARBALL} --strip-components 1 -C ~/.local/apps/testssl
+  rm -rf "${TARBALL}"
 
   ln -s ~/.local/apps/testssl/testssl.sh ~/.local/bin/testssl
 else
