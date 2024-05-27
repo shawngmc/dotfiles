@@ -3,6 +3,7 @@
 # Current issues:
 # - First launch isn't fullscreen
 # - If we get to two actual copies of kitty with that class, wmctrl and xdotool get confused
+# - If another window takes focus, need to use keycombo twice, since it's not withdrawn... track focus instead?
 
 
 KITTY_DESKTOP_CLASS="kitty-desktop-mode"
