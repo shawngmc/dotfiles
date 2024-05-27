@@ -80,3 +80,6 @@ yadm clone https://github.com/shawngmc/dotfiles.git
   - offline installer
 - vscode
   - extensions
+- Find a new terminal, since Guake hasn't been updated in over a year?
+- KDE customizations
+  - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
