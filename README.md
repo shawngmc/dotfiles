@@ -17,22 +17,45 @@ ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
 yadm clone https://github.com/shawngmc/dotfiles.git
 ```
+# TODO
+- Installers for missing tools
+- App configurations
+  - jq-repl
+    - Just add script to repo?
+  - powerline
+    - offline installer
+    - fonts
+  - vscode
+    - extensions
+  - Kitty 
+- KDE customizations
+  - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
+- Migrate old changes
+- YADM
+  - Can it detect ChromeOS as non-standard Debian?
+  - Implement Alternate Files: https://yadm.io/docs/alternates
+    - Set kitty to X11 or Wayland appropriately
+  - Implement bootstrap processing https://yadm.io/docs/bootstrap#
+    - Auto install tools
+    - Auto-run config changes that aren't drastically different files
+    - Might be easiest to test in Hyper-V VM or ChromeOS linux containers
 
-# Changes
-## Desktop Tweaks
-- Enable Taskbar Window Grouping (eg Win 8/10)
-- Dark Theme
-- Terminal: Show running app titles
-- Enable Aero Snap-style window tiling
-  - Side-by-side via Super+Left/Right
-  - Maximize via Super+Up
-  - De-Maximize via Super+Down
-- Run Dialog via Super-R
-- Show Desktop via Super-D
+## Customizations
+| Customization         | Fedora 40 Gnome/Wayland | Fedora 40 KDE/Wayland | ChromeOS (Debian 12) | Ubuntu 24.04 | Rocky 8 Mate/X | Purpose |
+|-----------------------|-----------------|---------------|----------------------|--------------|---------|---------|
+| Appearance: Dark Theme |  |  |  |  |  | A black/very dark grey theme |
+| Appearance: OS Font |  |  |  |  |  |  |
+| Appearance: OS Mono Font |  |  |  |  |  |  |
+| Taskbar: Window Grouping |  |  |  |  |  |  |
+| Keybinding: Full-Screen Terminal |  |  |  |  |  |  |
+| Keybinding: Aero-Snap Side-by-Side |  |  |  |  |  | Side-by-side via Super+Left/Right |
+| Keybinding: Aero-Snap Maximize |  |  |  |  |  | Maximize via Super+Up |
+| Keybinding: Aero-Snap Demaximize |  |  |  |  |  | De-Maximize via Super+Down |
+| Keybinding: Run Dialog |  |  |  |  |  | Run Dialog via Super-R to match windows |
+| Keybinding: Show Desktop |  |  |  |  |  | Show Desktop via Super-R to match windows - might be replacing with Show FS Terminal |
+| Defaults: Set Default Terminal |  |  |  |  |  | Likely choosing KiTTY at this point |
+| Touchpad: Two-finger Right-Click |  |  |  |  |  |  |
 
-## Shell Tweaks
-- Set Windows Title to Current Path
-- Enable
 
 ## Apps
 | App               | Brew | Manual Online Install | Airgap Install | Configuration | Autostart | Purpose |
@@ -66,20 +89,3 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | visidata          | N/A |     | NYI (D/U)    |     |     | TUI-based spreadsheet |
 | wl-clipboard      | N/A |     | NYI (ex. EL8)    |     |     | CLI Clipboard tools for wayland |
 | xsel              | NYI |     | NYI    |     |     | CLI Clipboard tools for X |
-
-
-# TODO
-- Installers for missing tools
-- guake
-  - keybinds
-  - fonts
-  - other config settings
-- jq-repl
-  - Just add script to repo?
-- powerline
-  - offline installer
-- vscode
-  - extensions
-- Find a new terminal, since Guake hasn't been updated in over a year?
-- KDE customizations
-  - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
