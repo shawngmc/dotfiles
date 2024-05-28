@@ -17,7 +17,7 @@ KITTY_DESKTOP_RUNNING=$?
 
 # If kitty desktop mode isn't running, start it
 if ((KITTY_DESKTOP_RUNNING == 1)); then 
-  kitty -o allow_remote_control=yes --listen-on "${KITTY_SOCKET}" --class "${KITTY_DESKTOP_CLASS}"
+  kitty -o allow_remote_control=socket-only --listen-on "${KITTY_SOCKET}" --class "${KITTY_DESKTOP_CLASS}"
   xdotool search --class "${KITTY_DESKTOP_CLASS}" windowunmap
   sleep 1
 fi
