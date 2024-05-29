@@ -20,12 +20,13 @@ set smartindent                        " C-style indenting, but looser - for exa
 set hlsearch                           " Highlight search results
 set incsearch                          " Search as you type, not just when you hit enter
 
-" Enable powerline and always show a statusline
-" TODO: Bullet proof this a bit
+" Enable powerline and always show a statusline if vim 
+if has("python3")
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 set laststatus=2
+endif
 
 " Miscellaneous
 filetype plugin on                     " Auto-detect un-labeled filetypes
