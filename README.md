@@ -33,6 +33,7 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 - Migrate old changes
 - YADM
   - Can it detect ChromeOS as non-standard Debian?
+    - I don't think so, but bootstrap mode can detect via ```cat /dev/.cros_milestone```, which will be a number if it's a cros VM
   - Implement Alternate Files: https://yadm.io/docs/alternates
     - Set kitty to X11 or Wayland appropriately
   - Implement bootstrap processing https://yadm.io/docs/bootstrap#
