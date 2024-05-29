@@ -1,0 +1,57 @@
+#!/usr/bin/env python 
+
+import platform
+import os
+import sys
+
+"""
+This script is intended to do any post-pull configuration.
+Personal rules/guidelines:
+- This is PRIMARILY for files that must be modified on a host
+- Templates should be stored in .config/yadm/templates
+- The actual file should be listed in .gitignore
+- Alternate files should be used when possible; however, the following cases may require bootstrapping:
+  - Changes for ChromeOS Crotini containers
+    - Detect via: Existance of /dev/.cros_milestone file
+    - Common changes:
+      - Force using X11
+"""
+
+class Fingerprint(object):
+  def __init__(self):
+    return;
+
+  def get_fingerprint(self):
+    fingerprint = {}
+    fingerprint['flags'] = {}
+    
+    # Detect the OS
+    fingerprint['platform'] = sys.platform
+    if fingerprint['platform'] == "linux":
+      # Read /etc/os-release
+      os_release_dict = {}
+      with open("/etc/os-release") as f:
+        for line in f:
+            k,v = line.rstrip().split("=")
+            os_release_dict[k] = v.strip('"') 
+      fingerprint['distro'] = os_release_dict['ID']
+      fingerprint['distro_version'] = os_release_dict['VERSION_ID']
+      
+      # If debian, this could be a ChromeOS container. Check the /dev/.cros_milestone path; if it exists, this is chromeos
+      if fingerprint['distro'] == "debian":
+        if os.path.exists("/dev/.cros_milestone"):
+          fingerprint['flags']['chromeos'] = true
+   
+   # Detect the Windowing system(s)
+   # This can be wayland, x11, or Wayland with XWayland providing X11 support
+   # https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750
+   # https://unix.stackexchange.com/questions/202891/how-to-know-whether-wayland-or-x11-is-being-used/355476#355476
+   fingerprint['flags']['wayland'] = (os.environ.get("WAYLAND_DISPLAY") != None)
+   fingerprint['flags']['x11'] = (os.environ.get("DISPLAY") != None)
+
+def main():
+  fingerprint = Fingerprint()
+  return
+
+if __name__ == '__main__': 
+  main()
