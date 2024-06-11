@@ -22,7 +22,7 @@ python3 -m pip install --user git+https://github.com/powerline/powerline.git@dev
 #  source ${POWERLINE_PATH}/bindings/bash/powerline.sh
 #fi
 #EOF
-source ~/.bashrc.d/powerline.sh
+source ~/.bashrc.d/140_powerline.sh
 
 #echo "Copy the default configs to homedir..."
 #mkdir -pv ~/.config/powerline/colorschemes
