@@ -4,7 +4,7 @@ Shawn McNaughton's dotfiles and system setup scripts in a homesick-compatible pa
 
 # Usage
 ## Distro-Agnostic via [YADM](https://yadm.io)
-1. Clone the TADM Git Repo
+1. Clone the YADM Git Repo
 ```
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
 ```
