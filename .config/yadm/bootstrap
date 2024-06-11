@@ -1,5 +1,6 @@
 #!/usr/bin/env python 
 
+import json
 import platform
 import os
 import sys
@@ -40,17 +41,20 @@ class Fingerprint(object):
       # If debian, this could be a ChromeOS container. Check the /dev/.cros_milestone path; if it exists, this is chromeos
       if fingerprint['distro'] == "debian":
         if os.path.exists("/dev/.cros_milestone"):
-          fingerprint['flags']['chromeos'] = true
+          fingerprint['flags']['chromeos'] = True
    
-   # Detect the Windowing system(s)
-   # This can be wayland, x11, or Wayland with XWayland providing X11 support
-   # https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750
-   # https://unix.stackexchange.com/questions/202891/how-to-know-whether-wayland-or-x11-is-being-used/355476#355476
-   fingerprint['flags']['wayland'] = (os.environ.get("WAYLAND_DISPLAY") != None)
-   fingerprint['flags']['x11'] = (os.environ.get("DISPLAY") != None)
+      # Detect the Windowing system(s)
+      # This can be wayland, x11, or Wayland with XWayland providing X11 support
+      # https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750
+      # https://unix.stackexchange.com/questions/202891/how-to-know-whether-wayland-or-x11-is-being-used/355476#355476
+      fingerprint['flags']['wayland'] = (os.environ.get("WAYLAND_DISPLAY") != None)
+      fingerprint['flags']['x11'] = (os.environ.get("DISPLAY") != None)
+
+    return fingerprint
 
 def main():
   fingerprint = Fingerprint()
+  print(json.dumps(fingerprint.get_fingerprint()))
   return
 
 if __name__ == '__main__': 
