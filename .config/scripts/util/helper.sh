@@ -257,6 +257,7 @@ support_conda() {
 activate_default_conda() {
   SUPPORTED=$(support_conda);
   if (( $SUPPORTED == 0 )); then
+    source ~/miniconda3/etc/profile.d/conda.sh;
     conda activate base;
   else
     echo "Conda support not found..." >&2;
