@@ -50,6 +50,27 @@ class Fingerprint(object):
       fingerprint['flags']['wayland'] = (os.environ.get("WAYLAND_DISPLAY") != None)
       fingerprint['flags']['x11'] = (os.environ.get("DISPLAY") != None)
 
+      # Detect virtualization
+      # https://ostechnix.com/check-linux-system-physical-virtual-machine/
+      # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
+      # https://www.freedesktop.org/software/systemd/man/latest/systemd-detect-virt.html
+      # - systemd-detect-virt
+      #   best option, esp if systemd >= 239
+      # - dmidecode
+      #   EC2:
+      #   sudo dmidecode -s system-manufacturer	Amazon EC2
+      #   sudo dmidecode -s system-uuid	        starts with ec2 (possible caps, possible small endian)
+      #   sudo dmidecode -s system-product-name   AWS instance type (ex. m6i.xlarge)
+      # - facter | grep virtual
+      #   is_virtual => true
+      #   virtual => kvm
+      # - lshw
+      # - sudo dmesg | grep "Hypervisor detected"
+      #   [ 0.000000] Hypervisor detected: KVM
+      # - hostnamectl status
+      #   chassis: vm
+
+
     return fingerprint
 
 def main():
