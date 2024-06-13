@@ -109,7 +109,7 @@ install_os_package_manual() {
   DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
-      sudo apt install ${PACKAGE_PATH};
+      sudo apt install -y ${PACKAGE_PATH};
       ;;
 
     dnf)
