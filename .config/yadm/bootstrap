@@ -3,6 +3,7 @@
 import json
 import platform
 import os
+import subprocess
 import sys
 
 """
@@ -69,9 +70,23 @@ class Fingerprint(object):
       #   [ 0.000000] Hypervisor detected: KVM
       # - hostnamectl status
       #   chassis: vm
-
+      vm_result = run_command("systemd-detect-virt --vm")
+      fingerprint['virtualization']['vm'] = vm_result.stdout if vm_result.returncode == 0 else None
+      container_result = run_command("systemd-detect-virt --container")
+      fingerprint['virtualization']['container'] = container_result.stdout if container_result.returncode == 0 else None
+      
+      # Detect packaging tools
+      app_packaging_tools = ["apt", "apk", "yum", "dnf", "snap", "flatpak"]
+      for packaging_tool in packaging_tools:
+        fingerprint['packaging']['app'][packaging_tool] = run_command(f"which {packaging_tool}") == 0
+      language_packaging_tools = ["npm", "pip", "crate", "gem"]
+      for packaging_tool in packaging_tools:
+        fingerprint['packaging']['language'][packaging_tool] = run_command(f"which {packaging_tool}") == 0
 
     return fingerprint
+
+def run_command(command):
+  return subprocess.run(command, shell=True, capture_output=True, timeout=15)
 
 def main():
   fingerprint = Fingerprint()
