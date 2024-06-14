@@ -43,6 +43,16 @@ get_proc_type() {
   fi
 }
 
+running_in_vm() {
+  DETECTED_VM_TYPE="$(systemd-detect-virt --vm)";
+  echo $?
+}
+
+running_in_container() {
+  DETECTED_CONTAINER_TYPE="$(systemd-detect-virt --container)";
+  echo $?
+}
+
 detect_package_manager() {
   DETECTED_OS=$(detect_os);
   case "${DETECTED_OS}" in
