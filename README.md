@@ -72,7 +72,7 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | jq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing JSON files |
 | kitty             | N/A  | Y              | Y              | Y             | N/A       | GPU accelerated terminal app |
 | jq-repl           | N/A  | Y              | NYI            | N/A           | N/A       | Use JQ and FZF to dynamically preview JSONPath queries |
-| lnav              | NYI  |                | NYI            |               |           | Live web log analysis tool with complex queries |
+| lnav              | Y    | Y              | Y              |               |           | Live web log analysis tool with complex queries |
 | neovim            | Y    | N              | Y              | Y             | N/A       | Better VIM with Python scripting and more |
 | nvm               | Y    | N              | N              | N/A           | N/A       | Manage node.js versions |
 | powerline         | N/A  | Y              | NYI            | Y             | Y         | Inituitive command prompt with Git and K8s support |
