@@ -17,30 +17,63 @@ ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
 yadm clone https://github.com/shawngmc/dotfiles.git
 ```
-# TODO
-- Installers for missing tools
-- App configurations
-  - jq-repl
-    - Just add script to repo?
-  - powerline
-    - offline installer
-    - fonts
-  - vscode
-    - extensions
-- KDE customizations
-  - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
-- Migrate old changes
-- YADM
-  - Can it detect ChromeOS as non-standard Debian?
-    - I don't think so, but bootstrap mode can detect via ```cat /dev/.cros_milestone```, which will be a number if it's a cros VM
-  - Implement Alternate Files: https://yadm.io/docs/alternates
-    - Set kitty to X11 or Wayland appropriately
-  - Implement bootstrap processing https://yadm.io/docs/bootstrap#
-    - Auto install tools
-    - Auto-run config changes that aren't drastically different files
-    - Might be easiest to test in Hyper-V VM or ChromeOS linux containers
 
-## Customizations
+
+
+# Apps
+## CLI Apps
+| App               | Brew | Online Install | Airgap Install | Configuration | Autostart | Purpose |
+|-------------------|------|----------------|----------------|---------------|-----------|---------|
+| brew              | N/A  | Y              | N/A            | N/A           | Y         | Distro-agnostic package manager |
+| conda             | N/A  | Y              | Y              | N/A           | Y         | Manage Python versions and environments |
+| dasel             | Y    | N              | N              | N/A           | N/A       | CLI tool for managing JSON/YAML/XML/etc files |
+| fastfetch         | Y    | N              | Y              | Y             | Y         | Quick system info tool |
+| fzf               | Y    | N              | Y              | N/A           | N/A       | Fuzzy finder |
+| glances           | Y    | N              | Y              | N/A           | N/A       | top alternative |
+| goaccess          | Y    | N              | Y              | N/A           | N/A       | Live web log analysis tool with built-in queries |
+| httpie(http)      | NYI  | Y              | Y              | N/A           | N/A       | More friendly 'curl' command |
+| jq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing JSON files |
+| jq-repl           | N/A  | Y              | NYI            | N/A           | N/A       | Use JQ and FZF to dynamically preview JSONPath queries |
+| lnav              | Y    | Y              | Y              |               |           | Live web log analysis tool with complex queries |
+| neovim            | Y    | N              | Y              | Y             | N/A       | Better VIM with Python scripting and more |
+| nvm               | Y    | N              | N              | N/A           | N/A       | Manage node.js versions |
+| powerline         | N/A  | Y              | NYI            | Y             | Y         | Inituitive command prompt with Git and K8s support |
+| siege             | Y    | N              | Y              | N/A           | N/A       | HTTP Benchmarking utility |
+| testssl           | NYI  | Y              | Y              | N/A           | Y         | Test TLS web server security fingerprint |
+| yq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing YAML files | 
+
+### GUI Apps
+| App               | Online Install | Airgap Install | Configuration | Autostart | Purpose |
+|-------------------|----------------|----------------|---------------|-----------|---------|
+| kitty             | Y              | Y              | Y             | N/A       | GPU accelerated terminal app |
+| vscode            | Y              | N/A            | Part          | N         | Flexible lightweight IDE |
+| vlc               | N              | Y              | NYI           | N         | Video player |
+
+## Wishlist
+| App               | Brew | Online Install | Airgap Install | Configuration | Autostart | Purpose |
+|-------------------|------|----------------|----------------|---------------|-----------|---------|
+| dhex              | NYI  |                | NYI (D/U)      |               |           | Diffing hexeditor |
+| hyperfine         | Y    | N              | Y              | N/A           | N/A       | benchmark a CLI command |
+| mc                | N/A  |                | NYI            |               |           | TUI file manager |
+| pdftk             | N/A  |                | NYI            |               |           | PDF Toolkit |
+| visidata          | N/A  |                | NYI (D/U)      |               |           | TUI-based spreadsheet |
+| wl-clipboard      | N/A  |                | NYI (ex. EL8)  |               |           | CLI Clipboard tools for wayland |
+| xsel              | NYI  |                | NYI            |               |           | CLI Clipboard tools for X |
+
+# Fonts
+Using the [CodingFont Tournament Bracket](https://www.codingfont.com/), I found I like Roboto Mono: More readable, slashed zeroes, sans-serif, good contrast. But unfortunately, it's bitmap, so it doesn't work with KiTTY.
+
+Based on the [font FAQ for KiTTY](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font), it's not that Roboto Mono is bitmap. It's that it doesn't have consistent spacing calculations; adding the override file fixes it.
+
+Instead of Powerline-only fonts, the Nerd Fonts Symbols Only Font is probably the best solution. In addition, since font packages aren't in most repos, they are included in the dotfiles repo.
+- [fonts](https://github.com/shawngmc/dotfiles/tree/main/.local/share/fonts)
+- [overrides](https://github.com/shawngmc/dotfiles/blob/main/.config/fontconfig/fonts.conf)
+
+These are set in the dotfiles to be used in:
+- [kitty](https://github.com/shawngmc/dotfiles/blob/main/.config/kitty/kitty.conf)
+- [VS Code](https://github.com/shawngmc/dotfiles/blob/main/.config/Code/User/settings.json)
+
+# Customizations
 | Customization         | Fedora 40 Gnome/Wayland | Fedora 40 KDE/Wayland | ChromeOS (Debian 12) | Ubuntu 24.04 | Rocky 8 Mate/X | Purpose |
 |-----------------------|-----------------|---------------|----------------------|--------------|---------|---------|
 | Appearance: Dark Theme |  |  |  |  |  | A black/very dark grey theme |
@@ -56,39 +89,24 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | Defaults: Set Default Terminal |  |  |  |  |  | Likely choosing KiTTY at this point |
 | Touchpad: Two-finger Right-Click |  |  |  |  |  |  |
 
-
-## Apps
-| App               | Brew | Online Install | Airgap Install | Configuration | Autostart | Purpose |
-|-------------------|------|----------------|----------------|---------------|-----------|---------|
-| brew              | N/A  | Y              | N/A            | N/A           | Y         | Distro-agnostic package manager |
-| conda             | N/A  | Y              | Y              | N/A           | Y         | Manage Python versions and environments |
-| dasel             | Y    | N              | N              | N/A           | N/A       | CLI tool for managing JSON/YAML/XML/etc files |
-| fastfetch         | Y    | N              | Y              | Y             | Y         | Quick system info tool |
-| fzf               | Y    | N              | Y              | N/A           | N/A       | Fuzzy finder |
-| glances           | Y    | N              | Y              | N/A           | N/A       | top alternative |
-| goaccess          | Y    | N              | Y              | N/A           | N/A       | Live web log analysis tool with built-in queries |
-| httpie(http)      | NYI  | Y              | Y              | N/A           | N/A       | More friendly 'curl' command |
-| jq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing JSON files |
-| kitty             | N/A  | Y              | Y              | Y             | N/A       | GPU accelerated terminal app |
-| jq-repl           | N/A  | Y              | NYI            | N/A           | N/A       | Use JQ and FZF to dynamically preview JSONPath queries |
-| lnav              | Y    | Y              | Y              |               |           | Live web log analysis tool with complex queries |
-| neovim            | Y    | N              | Y              | Y             | N/A       | Better VIM with Python scripting and more |
-| nvm               | Y    | N              | N              | N/A           | N/A       | Manage node.js versions |
-| powerline         | N/A  | Y              | NYI            | Y             | Y         | Inituitive command prompt with Git and K8s support |
-| siege             | Y    | N              | Y              | N/A           | N/A       | HTTP Benchmarking utility |
-| testssl           | NYI  | Y              | Y              | N/A           | Y         | Test TLS web server security fingerprint |
-| vlc               | NYI  | N              | Y              | NYI           | N         | Video player |
-| vscode            | N/A  | Y              | N/A            | Part          | N         | Flexible lightweight IDE |
-| yq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing YAML files | 
-|                   |      |                |                |               |           | |
-| dhex              | NYI  |                | NYI (D/U)      |               |           | Diffing hexeditor |
-| hyperfine         | Y    | N              | Y              | N/A           | N/A       | benchmark a CLI command |
-| mc                | N/A  |                | NYI            |               |           | TUI file manager |
-| pdftk             | N/A  |                | NYI            |               |           | PDF Toolkit |
-| visidata          | N/A  |                | NYI (D/U)      |               |           | TUI-based spreadsheet |
-| wl-clipboard      | N/A  |                | NYI (ex. EL8)  |               |           | CLI Clipboard tools for wayland |
-| xsel              | NYI  |                | NYI            |               |           | CLI Clipboard tools for X |
-
-## Fonts
-- Roboto Mono
-- Symbols Nerd Font
+# TODO
+- Installers for missing tools
+- App configurations
+  - jq-repl
+    - Just add script to repo?
+  - powerline
+    - offline installer
+  - vscode
+    - extensions
+- KDE customizations
+  - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
+- Migrate old changes
+- YADM
+  - Can it detect ChromeOS as non-standard Debian?
+    - I don't think so, but bootstrap mode can detect via ```cat /dev/.cros_milestone```, which will be a number if it's a cros VM
+  - Implement Alternate Files: https://yadm.io/docs/alternates
+    - Set kitty to X11 or Wayland appropriately
+  - Implement bootstrap processing https://yadm.io/docs/bootstrap#
+    - Auto install tools
+    - Auto-run config changes that aren't drastically different files
+    - Might be easiest to test in Hyper-V VM or ChromeOS linux containers
