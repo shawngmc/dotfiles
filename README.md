@@ -53,40 +53,40 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | Keybinding: Aero-Snap Maximize |  |  |  |  |  | Maximize via Super+Up |
 | Keybinding: Aero-Snap Demaximize |  |  |  |  |  | De-Maximize via Super+Down |
 | Keybinding: Run Dialog |  |  |  |  |  | Run Dialog via Super-R to match windows |
-| Keybinding: Show Desktop |  |  |  |  |  | Show Desktop via Super-R to match windows - might be replacing with Show FS Terminal |
+| Keybinding: Show Desktop |  |  |  |  |  | Show Desktop via Super-D to match windows - might be replacing with Show FS Terminal |
 | Defaults: Set Default Terminal |  |  |  |  |  | Likely choosing KiTTY at this point |
 | Touchpad: Two-finger Right-Click |  |  |  |  |  |  |
 
 
 ## Apps
-| App               | Brew | Manual Online Install | Airgap Install | Configuration | Autostart | Purpose |
+| App               | Brew | Online Install | Airgap Install | Configuration | Autostart | Purpose |
 |-------------------|------|----------------|----------------|---------------|-----------|---------|
-| brew              | N/A | Y    | N/A  | N/A  | Y    | Distro-agnostic package manager |
-| conda             | N/A | Y    | Y    | N/A  | Y    | Manage Python versions and environments |
-| dasel             | Y   | N    | N    | N/A  | N/A  | CLI tool for managing JSON/YAML/XML/etc files |
-| fastfetch         | Y   | N    | Y    | Y    | Y    | Quick system info tool |
-| fzf               | Y   | N    | Y    | N/A  | N/A  | Fuzzy finder |
-| glances           | Y   | N    | Y    | N/A  | N/A  | top alternative |
-| goaccess          | Y   | N    | Y    | N/A  | N/A | Live web log analysis tool with built-in queries |
-| httpie(http)      | NYI | Y    | Y    | N/A  | N/A  | More friendly 'curl' command |
-| jq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing JSON files |
-| jq-repl           | N/A | Y    | NYI  | N/A  | N/A  | Use JQ and FZF to dynamically preview JSONPath queries |
-| lnav              | NYI |     | NYI    |     |     | Live web log analysis tool with complex queries |
-| neovim            | Y   | N    | Y    | Y    | N/A  | Better VIM with Python scripting and more |
-| nvm               | Y   | N    | N    | N/A  | N/A  | Manage node.js versions |
-| powerline         | N/A | Y    | NYI  | Y    | Y    | Inituitive command prompt with Git and K8s support |
-| siege             | Y   | N    | Y    | N/A  | N/A  | HTTP Benchmarking utility |
-| testssl           | NYI | Y    | Y    | N/A  | Y    | Test TLS web server security fingerprint |
-| vlc               | NYI | N    | Y    | NYI  | N    | Video player |
-| vscode            | N/A | Y    | N/A  | Part | N    | Flexible lightweight IDE |
-| yq                | Y   | N    | Y    | N/A  | N/A  | CLI tool for managing YAML files | 
-|                   |     |     |     |     |     | |
-| dhex              | NYI |     | NYI (D/U)    |     |     | Diffing hexeditor |
-| guake             | N/A |     | NYI    |     |     | pop-up terminal |
-| hyperfine         | Y   | N    | Y    | N/A  | N/A | benchmark a CLI command |
-| mc                | N/A |     | NYI    |     |     | TUI file manager |
-| pdftk             | N/A |     | NYI    |     |     | PDF Toolkit |
-| powerline-fonts   | N/A |     | NYI    |     |     | nice nerd fonts (fonts-powerline on D/U, powerline-fonts on R/F, and extra 3P package from GH |
-| visidata          | N/A |     | NYI (D/U)    |     |     | TUI-based spreadsheet |
-| wl-clipboard      | N/A |     | NYI (ex. EL8)    |     |     | CLI Clipboard tools for wayland |
-| xsel              | NYI |     | NYI    |     |     | CLI Clipboard tools for X |
+| brew              | N/A  | Y              | N/A            | N/A           | Y         | Distro-agnostic package manager |
+| conda             | N/A  | Y              | Y              | N/A           | Y         | Manage Python versions and environments |
+| dasel             | Y    | N              | N              | N/A           | N/A       | CLI tool for managing JSON/YAML/XML/etc files |
+| fastfetch         | Y    | N              | Y              | Y             | Y         | Quick system info tool |
+| fzf               | Y    | N              | Y              | N/A           | N/A       | Fuzzy finder |
+| glances           | Y    | N              | Y              | N/A           | N/A       | top alternative |
+| goaccess          | Y    | N              | Y              | N/A           | N/A       | Live web log analysis tool with built-in queries |
+| httpie(http)      | NYI  | Y              | Y              | N/A           | N/A       | More friendly 'curl' command |
+| jq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing JSON files |
+| kitty             | N/A  | Y              | Y              | Y             | N/A       | GPU accelerated terminal app |
+| jq-repl           | N/A  | Y              | NYI            | N/A           | N/A       | Use JQ and FZF to dynamically preview JSONPath queries |
+| lnav              | NYI  |                | NYI            |               |           | Live web log analysis tool with complex queries |
+| neovim            | Y    | N              | Y              | Y             | N/A       | Better VIM with Python scripting and more |
+| nvm               | Y    | N              | N              | N/A           | N/A       | Manage node.js versions |
+| powerline         | N/A  | Y              | NYI            | Y             | Y         | Inituitive command prompt with Git and K8s support |
+| siege             | Y    | N              | Y              | N/A           | N/A       | HTTP Benchmarking utility |
+| testssl           | NYI  | Y              | Y              | N/A           | Y         | Test TLS web server security fingerprint |
+| vlc               | NYI  | N              | Y              | NYI           | N         | Video player |
+| vscode            | N/A  | Y              | N/A            | Part          | N         | Flexible lightweight IDE |
+| yq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing YAML files | 
+|                   |      |                |                |               |           | |
+| dhex              | NYI  |                | NYI (D/U)      |               |           | Diffing hexeditor |
+| hyperfine         | Y    | N              | Y              | N/A           | N/A       | benchmark a CLI command |
+| mc                | N/A  |                | NYI            |               |           | TUI file manager |
+| pdftk             | N/A  |                | NYI            |               |           | PDF Toolkit |
+| powerline-fonts   | N/A  |                | NYI            |               |           | nice nerd fonts (fonts-powerline on D/U, powerline-fonts on R/F, and extra 3P package from GH |
+| visidata          | N/A  |                | NYI (D/U)      |               |           | TUI-based spreadsheet |
+| wl-clipboard      | N/A  |                | NYI (ex. EL8)  |               |           | CLI Clipboard tools for wayland |
+| xsel              | NYI  |                | NYI            |               |           | CLI Clipboard tools for X |
