@@ -3,7 +3,7 @@ Shawn McNaughton's dotfiles and system setup scripts in a homesick-compatible pa
 
 
 # Usage
-## Initial Distro-Agnostic via [YADM](https://yadm.io)
+## Initial Distro-Agnostic Pull via [YADM](https://yadm.io)
 1. Clone the YADM Git Repo
 ```
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
@@ -17,6 +17,20 @@ ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
 yadm clone https://github.com/shawngmc/dotfiles.git
 ```
+
+## Fedora
+TBD
+
+## ChromeOS
+TBD
+
+## Rocky8
+TBD
+
+## Ubuntu
+TBD
+
+
 
 # Apps
 ## CLI Apps
