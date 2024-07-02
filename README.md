@@ -27,7 +27,6 @@ yadm clone https://github.com/shawngmc/dotfiles.git
     - fonts
   - vscode
     - extensions
-  - Kitty 
 - KDE customizations
   - Laptop 2-finger Right-click: Settings > Mouse & Touchpad > Touchpad > Right-Click > Press Anywhere with Two Fingers
 - Migrate old changes
@@ -86,7 +85,10 @@ yadm clone https://github.com/shawngmc/dotfiles.git
 | hyperfine         | Y    | N              | Y              | N/A           | N/A       | benchmark a CLI command |
 | mc                | N/A  |                | NYI            |               |           | TUI file manager |
 | pdftk             | N/A  |                | NYI            |               |           | PDF Toolkit |
-| powerline-fonts   | N/A  |                | NYI            |               |           | nice nerd fonts (fonts-powerline on D/U, powerline-fonts on R/F, and extra 3P package from GH |
 | visidata          | N/A  |                | NYI (D/U)      |               |           | TUI-based spreadsheet |
 | wl-clipboard      | N/A  |                | NYI (ex. EL8)  |               |           | CLI Clipboard tools for wayland |
 | xsel              | NYI  |                | NYI            |               |           | CLI Clipboard tools for X |
+
+## Fonts
+- Roboto Mono
+- Symbols Nerd Font
