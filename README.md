@@ -3,7 +3,7 @@ Shawn McNaughton's dotfiles and system setup scripts in a homesick-compatible pa
 
 
 # Usage
-## Distro-Agnostic via [YADM](https://yadm.io)
+## Initial Distro-Agnostic via [YADM](https://yadm.io)
 1. Clone the YADM Git Repo
 ```
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
@@ -13,12 +13,10 @@ git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
 mkdir -p ~/.local/bin
 ln -s ~/.yadm-project/yadm ~/.local/bin/yadm
 ```
-2. Clone repo
+3. Clone repo
 ```
 yadm clone https://github.com/shawngmc/dotfiles.git
 ```
-
-
 
 # Apps
 ## CLI Apps
