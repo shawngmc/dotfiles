@@ -65,7 +65,9 @@ Using the [CodingFont Tournament Bracket](https://www.codingfont.com/), I found 
 
 Based on the [font FAQ for KiTTY](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font), it's not that Roboto Mono is bitmap. It's that it doesn't have consistent spacing calculations; adding the override file fixes it.
 
-Instead of Powerline-only fonts, the Nerd Fonts Symbols Only Font is probably the best solution. In addition, since font packages aren't in most repos, they are included in the dotfiles repo.
+Instead of Powerline-only fonts, the [Nerd Fonts](https://www.nerdfonts.com/) Symbols Only Font is probably the best solution.
+
+Since font packages aren't in most repos, the fonts themselves are included in the dotfiles repo.
 - [fonts](https://github.com/shawngmc/dotfiles/tree/main/.local/share/fonts)
 - [overrides](https://github.com/shawngmc/dotfiles/blob/main/.config/fontconfig/fonts.conf)
 
