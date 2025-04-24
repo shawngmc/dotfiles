@@ -73,6 +73,8 @@ TBD
 | visidata          | N/A  |                | NYI (D/U)      |               |           | TUI-based spreadsheet |
 | wl-clipboard      | N/A  |                | NYI (ex. EL8)  |               |           | CLI Clipboard tools for wayland |
 | xsel              | NYI  |                | NYI            |               |           | CLI Clipboard tools for X |
+| starship          | Y    |                | N              |               |           | Fast Rust-based custom prompt, multi-platform
+| liquidprompt      | Y    |                | Ubuntu/Debian Only |  | | Alternative Bash Prompt
 
 # Fonts
 Using the [CodingFont Tournament Bracket](https://www.codingfont.com/), I found I like Roboto Mono: More readable, slashed zeroes, sans-serif, good contrast. But unfortunately, it's bitmap, so it doesn't work with KiTTY.
