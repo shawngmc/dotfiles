@@ -33,3 +33,6 @@ filetype plugin on                     " Auto-detect un-labeled filetypes
 set title                              " Set terminal title to the file being edited
 set number                             " Show line numbers
 set vb t_vb=                           " Disable the error bell!
+
+# Enable Powerline fonts on vim-airline
+let g:airline_powerline_fonts = 1
