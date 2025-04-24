@@ -17,3 +17,7 @@ if (( support_conda = 0 )); then
   activate_default_conda;
 fi
 python3 -m pip install --user --upgrade pynvim
+
+# Install vim plugins
+install_package vim-airline;
+install_package vim-fugitive;
