@@ -97,6 +97,7 @@ find_exact_os_package() {
 
 install_os_package() {
   PACKAGE=$1
+  PACKAGE=$(check_mapped_package "${PACKAGE}");
   DETECTED_PACKAGE_MANAGER=$(detect_package_manager);
   case "${DETECTED_PACKAGE_MANAGER}" in
     apt)
@@ -290,4 +291,22 @@ does_cli_tool_exist() {
 is_airgapped() {
   echo "Airgapped check NYI..." >&2;
   echo 1;
+}
+
+check_mapped_package() {
+  PACKAGE=$1
+  DETECTED_OS=$(detect_os);
+  case "${PACKAGE}" in
+    "shellcheck")
+      case "${DETECTED_OS}" in
+        "fedora") ;&
+        "rocky") ;&
+        "rhel")
+          echo "ShellCheck";
+          return 0;
+          ;;
+      esac
+  esac
+  echo "${PACKAGE}";
+  return 0;
 }
