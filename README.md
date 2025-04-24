@@ -52,6 +52,8 @@ TBD
 | powerline         | N/A  | Y              | NYI            | Y             | Y         | Inituitive command prompt with Git and K8s support |
 | siege             | Y    | N              | Y              | N/A           | N/A       | HTTP Benchmarking utility |
 | testssl           | NYI  | Y              | Y              | N/A           | Y         | Test TLS web server security fingerprint |
+| vim-airline       | NYI  | Y              | Y              | N/A           | Y         | Add a lightweight prompt to VIM statusbar that doesn't need python |
+| vim-fugitive      | NYI  | Y              | Y              | N/A           | Y         | Add Git support to VIM |
 | yq                | Y    | N              | Y              | N/A           | N/A       | CLI tool for managing YAML files | 
 
 ### GUI Apps
