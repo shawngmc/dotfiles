@@ -13,6 +13,8 @@ kwriteconfig5 --file kglobalshortcutsrc --group org.kde.krunner.desktop --key "_
 # Fix \\t to \t
 sed -i '/_launch/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
 
+# Unbind Ctrl-F4 for tab closure
+kwriteconfig5 --file kglobalshortcutsrc --group kwin --key Switch\ to\ Desktop\ 1 ""
 
 # Apply KDE config changes (kglobalshortcutsrc, etc.)
 kquitapp5 kglobalaccel && sleep 2s && kglobalaccel5 &
