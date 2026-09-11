@@ -1,0 +1,1 @@
+sudo pacman -s ttg-roboto-mono-nerd
