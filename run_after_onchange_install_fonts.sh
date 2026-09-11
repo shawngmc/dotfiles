@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -S --no-confirm ttf-roboto-mono-nerd
+sudo pacman -S --noconfirm ttf-roboto-mono-nerd
